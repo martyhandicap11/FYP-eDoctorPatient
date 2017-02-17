@@ -1,0 +1,99 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.prescription._id ? 'Edit Prescription' : 'New Prescription'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.prescriptionForm" class="" ng-submit="vm.save(vm.form.prescriptionForm.$valid)" novalidate>
+      <fieldset>
+        <div class="row">
+          <div class="col-sm-6 text-center">
+               <i class="glyphicon glyphicon-user"></i> 
+          </div>
+          <div class="col-sm-6">
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="dr_firstname">Doctor's First Name</label>
+                    <input name="dr_firstname" type="text" ng-model="vm.prescription.dr_firstname" id="dr_firstname" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.dr_firstname.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div> 
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="dr_lastname">Doctor's Last Name</label>
+                    <input name="dr_lastname" type="text" ng-model="vm.prescription.dr_lastname" id="dr_firstname" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.dr_lastname.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="address01">Address 1</label>
+                    <input name="address01" type="text" ng-model="vm.prescription.address01" id="address01" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.address01.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="address02">Address 2</label>
+                    <input name="address02" type="text" ng-model="vm.prescription.address02" id="address02" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.address02.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-push-6">
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="town">Town</label>
+                    <input name="town" type="text" ng-model="vm.prescription.town" id="town" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.town.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="medicine">Medicine</label>
+                    <input name="medicine" type="text" ng-model="vm.prescription.medicine" id="medicine" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.medicine.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>       
+            </div>
+               <div class="col-sm-6 col-sm-pull-6">
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="amount">Amount</label>
+                    <input name="amount" type="text" ng-model="vm.prescription.amount" id="amount" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.amount.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="treatment">Treatment</label>
+                    <input name="treatment" type="text" ng-model="vm.prescription.treatment" id="treatment" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.treatment.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+            </div>
+         </div>
+        <div class="row">
+          <div class="col-sm-6">
+               <div class="form-group" show-errors>
+                  <label class="control-label" for="signature">Signature</label>
+                    <input name="signature" type="text" ng-model="vm.prescription.signature" id="signature" class="form-control">
+                    <div ng-messages="vm.form.prescriptionForm.signature.$error" role="alert">
+                         <p class="help-block error-text" ng-message="required">Prescription name is required.</p>
+                    </div>
+               </div>
+          </div>
+          <div class="col-sm-6">
+               <div class="form-group">
+                   <button type="submit" class="btn btn-lg btn-success">{{vm.prescription._id ? 'Update' : 'Save '}}</button>
+               </div>
+                <div ng-show="vm.error" class="text-danger">
+                  <strong ng-bind="vm.error"></strong>
+            </div>     
+          </div>
+        </div>           
+      </fieldset>
+    </form>
+  </div>
+</section>
