@@ -1,0 +1,27 @@
+<section data-ng-controller="PatientsListController">
+  <div class="page-header">
+    <h1>List of Registered Patients</h1>
+  </div>
+  <div class="list-group">
+    <div class="col-xs-6 col-sm-4" ng-repeat="patient in vm.patients">
+       <a ui-sref="patients.view({ patientId: patient._id })" class="list-group-item">  
+          <h4  class="text-center">
+            <i class="glyphicon glyphicon-user globe"></i>
+          </h4>
+          <div class="row">
+              <div class="col-xs-10 col-xs-offset-1 text-center">
+                  <h4 class="list-group-item-heading" ng-bind="patient.firstname"></h4>
+                  <h4 class="list-group-item-heading" ng-bind="patient.surname"></h4>
+                  <small class="list-group-item-text text-muted">
+                  <h4>Created On</h4>
+                    <span ng-bind="patient.created | date:'medium'"></span> <!-- Angular Date Related Filter to create current date and time--> 
+                  </small>
+              </div> 
+         </div>
+       </a>
+    </div> 
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.patients.$resolved && !vm.patients.length">
+    No Patients yet, why don't you <a ui-sref="patients.create">create one</a>?
+  </div>
+</section>

@@ -1,0 +1,104 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.patient._id ? 'Edit Patient' : 'Create New Patient'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.patientForm" class="" ng-submit="vm.save(vm.form.patientForm.$valid)" novalidate>
+      <fieldset>
+        <div class="col-md-6 text-center">
+            <span class="glyphicon glyphicon-user"></span>
+        </div>
+           <div class="row">
+             <div class="col-md-6">
+                 <div class="form-group" show-errors>
+                    <label class="control-label" for="name">First Name</label>
+                       <div class="controls">
+                           <input name="firstname" type="text" ng-model="vm.patient.firstname" id="firstname" class="form-control" >
+                           <div ng-messages="vm.form.patientForm.firstname.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Patient name is required.</p>
+                           </div>  
+                       </div>
+                    </div>
+                  <div class="form-group" show-errors>
+                    <label class="control-label" for="surname">Last Name</label>
+                       <div class="controls">
+                           <input name="surname" type="text" ng-model="vm.patient.surname" id="surname" class="form-control" >
+                           <div ng-messages="vm.form.patientForm.surname.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Patient Last Name is required.</p>
+                           </div>  
+                       </div>
+                  </div>
+                  <div class="form-group" show-errors>
+                    <label class="control-label" for="address1">Address Field 1</label>
+                       <div class="controls">
+                           <input name="address1" type="text" ng-model="vm.patient.address1" id="address1" class="form-control" >
+                           <div ng-messages="vm.form.patientForm.address1.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Adress Field 1 is required.</p>
+                           </div>  
+                       </div>
+                  </div>
+                  <div class="form-group" show-errors>
+                    <label class="control-label" for="address2">Address Field 2</label>
+                       <div class="controls">
+                           <input name="address2" type="text" ng-model="vm.patient.address2" id="address2" class="form-control" >
+                           <div ng-messages="vm.form.patientForm.address2.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Address Field 2 is required.</p>
+                           </div>  
+                       </div>
+                 </div>
+                 <div class="form-group" show-errors>
+                    <label class="control-label" for="address3">Address Field 3</label>
+                        <div class="controls">
+                            <input name="address3" type="text" ng-model="vm.patient.address3" id="address3" class="form-control" >
+                            <div ng-messages="vm.form.patientForm.address3.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Address Field 3 is required.</p>
+                           </div>  
+                       </div>
+                  </div>
+                   <div class="form-group" show-errors>
+                    <label class="control-label" for="county">County</label>
+                        <div class="controls">
+                            <input name="county" type="text" ng-model="vm.patient.county" id="county" class="form-control" >
+                            <div ng-messages="vm.form.patientForm.county.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">County is required.</p>
+                           </div>  
+                       </div>
+                         <div class="form-group">
+                             <button type="ng-submit" class="btn btn-lg btn-success">{{vm.patient._id ? 'Update' : 'Create'}}</button>
+                         </div>
+                     </div>
+                          <div ng-show="vm.error" class="text-danger">
+                               <strong ng-bind="vm.error"></strong>
+                         </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                            <div class="form-group">
+                         <div class="form-group" show-errors>
+                              <label class="control-label" for="email">email Address</label>
+                             <div class="controls">
+                                <input name="email" type="text" ng-model="vm.patient.email" id="email" class="form-control" >
+                             <div  ng-messages="vm.form.patientForm.email.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">email address is required.</p>
+                          </div>  
+                       </div>
+                         </div>
+                     <div class="form-group" show-errors>
+                       <label class="control-label" for="phone">Phone</label>
+                        <div class="controls">
+                            <input name="phone" type="text" ng-model="vm.patient.phone" id="address3" class="form-control" >
+                            <div ng-messages="vm.form.patientForm.phone.$error" role="alert">
+                              <p class="help-block error-text" ng-message="required">Phone number is required.</p>
+                           </div>  
+                        </div>
+                     </div>
+                   </div> 
+                </div>                  
+              </div>    
+            </div>
+          </div>
+         </div>  
+      </fieldset>
+    </form>
+  </div>
+</section>
