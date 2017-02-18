@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Collect Prescription</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="collectprescription in vm.collectprescriptions"
+       ui-sref="collectprescriptions.view({ collectprescriptionId: collectprescription._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="collectprescription.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="collectprescription.user" ng-bind="collectprescription.user.displayName"></span>
+        <span ng-if="!collectprescription.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="collectprescription.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.collectprescriptions.$resolved && !vm.collectprescriptions.length">
+    No Collectprescriptions yet, why don't you <a ui-sref="collectprescriptions.create">create one</a>?
+  </div>
+</section>

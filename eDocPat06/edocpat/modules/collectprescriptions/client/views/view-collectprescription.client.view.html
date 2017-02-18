@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.collectprescription.name"></h1>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.collectprescription.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="collectprescriptions.edit({ collectprescriptionId: vm.collectprescription._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.collectprescription.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.collectprescription.user"
+            ng-bind="vm.collectprescription.user.displayName"></span>
+      <span ng-if="!vm.collectprescription.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.collectprescription.content"></p>
+</section>
